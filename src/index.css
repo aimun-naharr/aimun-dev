@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: sans-bold;
+  src: url("./assets/fonts/6318ff854e763de1f0988534_GeneralSans-Bold.woff2");
+}
+@font-face {
+  font-family: sans-medium;
+  src: url("./assets/fonts/6318ff85598564ab56a05c6d_GeneralSans-Medium.woff2");
+}
+
+:root {
+  /* #F8F8F8 */
+  --primary-color: #f8f8f8;
+  --primary-foreground-color: #111111;
+  --font-bold: sans-bold;
+  --font-medium: sans-medium;
+  --dark-card-bg: #101214;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100dvh;
+  font-family: var(--font-medium), system-ui;
+}
+
+[theme="light"] {
+  background-color: var(--primary-color);
+  color: var(--primary-foreground-color);
+}
+[theme="dark"] {
+  background-color: var(--primary-foreground-color);
+  color: var(--primary-color);
+}
