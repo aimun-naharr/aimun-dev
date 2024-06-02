@@ -1,10 +1,8 @@
-import { MdArrowOutward } from "react-icons/md";
-import aimunWithUmbrella from "../../assets/aimun-with-umbrella.jpg";
-import Container from "../../components/layout/Container";
-import AboutExp from "./AboutExp";
-import RevealText from "../../components/RevealText";
-import { revealAnim } from "../../animations";
 import { motion } from "framer-motion";
+import { MdArrowOutward } from "react-icons/md";
+import { revealAnim } from "../../animations";
+import RevealText from "../../components/RevealText";
+import Container from "../../components/layout/Container";
 
 const SocialLink = ({ title }: { title: string }) => {
   return (
@@ -29,50 +27,45 @@ const HeroSection = () => {
     <>
       <section
         data-color="light"
-        className=" relative  h-screen  flex items-center justify-center bg-dot-pattern-light"
+        className=" relative  h-screen  flex  justify-center bg-dot-pattern-light"
       >
         {/* <AboutExp /> */}
         <Container>
-          <div>
+          <div className="w-full ">
             <div className="">
-              <h1 className="text-[7vw] leading-[7vw] font-sans-bold tracking-tighter uppercase overflow-hidden ">
+              <h1 className="text-[10vw] leading-[10vw] font-sans-bold tracking-tight uppercase overflow-hidden text-center ">
                 {/* Frontend{" "} */}
-                <RevealText word="Frontend" />
-              </h1>
-              <h1 className="text-[7vw] leading-[7vw] font-sans-bold tracking-tighter uppercase ml-[100px] overflow-hidden">
-                <RevealText word="Developer" animDelay={5} />
-                {/* Developer */}
+                <RevealText word="Aimun " />
+                <span> </span>
+                <RevealText word="Nahar" animDelay={5} />
               </h1>
             </div>
-            <div className="flex   gap-20 ml-[150px] mt-10 mb-20 leading-relaxed ">
+            <div className="flex   gap-20 mt-10 mb-20 leading-relaxed justify-between  px-10">
+              <div className="pl-10">
+                <p>☁️18 deg weather</p>
+                <p>chittagong bangladesh</p>
+              </div>
+
               <motion.div
-                className="w-1/2"
+                className="w-1/2 text-2xl"
                 variants={revealAnim}
                 initial={"hidden"}
                 animate={"show"}
                 custom={1.2}
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
-                consectetur non saepe animi beatae nisi, Lorem ipsum dolor sit
-                amet consectetur adipisicing elit. Illum, nam.
-              </motion.div>
-              <motion.div
-                variants={revealAnim}
-                initial={"hidden"}
-                animate={"show"}
-                custom={1.5}
-              >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint,
-                sapiente!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
+                incidunt quasi consequatur odio nihil quidem, officia nobis
+                omnis quaerat excepturi repudiandae cumque necessitatibus sequi
+                maxime ad voluptates eligendi fuga fugiat?
               </motion.div>
             </div>
-            <div className="ml-[150px] ">
+            <div className="">
               <motion.div
                 variants={revealAnim}
                 initial={"hidden"}
                 animate={"show"}
                 custom={1.9}
-                className="flex gap-6 "
+                className="flex gap-6  justify-end"
               >
                 <SocialLink title="facebook" />
                 <SocialLink title="twitter" />
