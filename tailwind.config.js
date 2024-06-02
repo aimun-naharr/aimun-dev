@@ -10,7 +10,7 @@ export default {
         'sans-medium': 'var(--font-medium)',
         'sans-bold': 'var(--font-bold)'
       },
-      color: {
+      colors: {
         'primary': 'var(--primary-color)',
         'primary-foreground': 'var(--primary-foreground-color)',
         'card-bg': 'var(--dark-card-bg)'

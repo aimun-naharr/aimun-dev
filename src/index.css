@@ -17,7 +17,8 @@
   --primary-foreground-color: #111111;
   --font-bold: sans-bold;
   --font-medium: sans-medium;
-  --dark-card-bg: #101214;
+  --dark-card-bg: #1d1d1d;
+  --text-gradient: linear-gradient(180deg, #fff, #adadad);
 }
 
 * {
@@ -29,6 +30,13 @@
 body {
   min-height: 100dvh;
   font-family: var(--font-medium), system-ui;
+  /* background: radial-gradient(
+      circle,
+      rgba(170, 66, 66, 0.322) 20%,
+      transparent 20%
+    )
+    repeat;
+  background-size: 20px 20px; */
 }
 
 [theme="light"] {
@@ -38,4 +46,34 @@ body {
 [theme="dark"] {
   background-color: var(--primary-foreground-color);
   color: var(--primary-color);
+}
+
+[theme="dark"] .text {
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.light-gradient {
+  background: var(--text-gradient);
+}
+.bg-dot-pattern-light {
+  background: radial-gradient(
+      circle,
+      rgba(185, 185, 185, 0.096) 20%,
+      transparent 20%
+    )
+    repeat;
+  background-size: 20px 20px;
+}
+.bg-dot-pattern-dark {
+  background: radial-gradient(circle, rgb(161, 151, 151) 20%, transparent 20%)
+    repeat;
+  background-size: 20px 20px;
+}
+
+@layer utilities {
+  .chip {
+    @apply px-4 py-1 border border-primary rounded-full;
+  }
 }
