@@ -1,11 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import HomePage from "./pages/home";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
+import Loading from "./components/Loading";
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  console.log(loading);
   console.log(ScrollTrigger);
   useEffect(() => {
     const sections = document.querySelectorAll("section");
@@ -25,11 +28,21 @@ function App() {
       });
     });
   }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
 
   return (
-    <div>
-      <HomePage />
-    </div>
+    <>
+      <div>
+        <HomePage />
+      </div>
+    </>
   );
 }
 

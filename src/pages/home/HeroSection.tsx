@@ -3,6 +3,8 @@ import aimunWithUmbrella from "../../assets/aimun-with-umbrella.jpg";
 import Container from "../../components/layout/Container";
 import AboutExp from "./AboutExp";
 import RevealText from "../../components/RevealText";
+import { revealAnim } from "../../animations";
+import { motion } from "framer-motion";
 
 const SocialLink = ({ title }: { title: string }) => {
   return (
@@ -22,6 +24,7 @@ const SocialLink = ({ title }: { title: string }) => {
 };
 
 const HeroSection = () => {
+  // motion
   return (
     <>
       <section
@@ -42,23 +45,40 @@ const HeroSection = () => {
               </h1>
             </div>
             <div className="flex   gap-20 ml-[150px] mt-10 mb-20 leading-relaxed ">
-              <div className="w-1/2">
+              <motion.div
+                className="w-1/2"
+                variants={revealAnim}
+                initial={"hidden"}
+                animate={"show"}
+                custom={1.2}
+              >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
                 consectetur non saepe animi beatae nisi, Lorem ipsum dolor sit
                 amet consectetur adipisicing elit. Illum, nam.
-              </div>
-              <div>
+              </motion.div>
+              <motion.div
+                variants={revealAnim}
+                initial={"hidden"}
+                animate={"show"}
+                custom={1.5}
+              >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint,
                 sapiente!
-              </div>
+              </motion.div>
             </div>
             <div className="ml-[150px] ">
-              <div className="flex gap-6 ">
+              <motion.div
+                variants={revealAnim}
+                initial={"hidden"}
+                animate={"show"}
+                custom={1.9}
+                className="flex gap-6 "
+              >
                 <SocialLink title="facebook" />
                 <SocialLink title="twitter" />
                 <SocialLink title="linkedin" />
                 <SocialLink title="instagram" />
-              </div>
+              </motion.div>
             </div>
           </div>
         </Container>

@@ -66,7 +66,7 @@ const Work = () => {
   return (
     <section className="py-10" data-color="dark">
       <Container>
-        <SectionTitle title="Work"></SectionTitle>
+        <SectionTitle title="Work" progressBgClass="bg-primary"></SectionTitle>
         <div className="flex  relative">
           <div className="w-1/2  h-max sticky top-1/4">
             <h1 className="text-[15vw] leading-[15vw] text ">
