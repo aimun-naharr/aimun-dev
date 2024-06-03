@@ -46,12 +46,12 @@ const HeroSection = () => {
                 animate={"show"}
                 custom={1.2}
               >
-                A talented frontend developer from Bangladesh with a deep
-                passion for UI/UX. With one year of industry experience, I
-                thoroughly enjoy my work—most days, it doesn’t even feel like
-                work! I’m always eager to learn new things to solve UI
-                challenges because, let’s face it, bugs are just features that
-                haven’t had their morning coffee yet.
+                A great frontend developer from Bangladesh with a deep passion
+                for UI/UX. With one year of industry experience, I thoroughly
+                enjoy my work. Most days, it doesn’t even feel like work! I’m
+                always eager to learn new things to solve UI challenges because,
+                let’s face it, bugs are just features that haven’t had their
+                morning coffee yet.
               </motion.div>
             </div>
             <div className="">
