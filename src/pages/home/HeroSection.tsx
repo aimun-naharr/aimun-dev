@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { MdArrowOutward } from "react-icons/md";
 import { revealAnim } from "../../animations";
 import RevealText from "../../components/RevealText";
 import Container from "../../components/layout/Container";

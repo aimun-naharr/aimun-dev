@@ -1,4 +1,3 @@
-import React from "react";
 import Container from "../../components/layout/Container";
 import SectionTitle from "../../components/shared/SectionTitle";
 import { cn } from "../../utils";

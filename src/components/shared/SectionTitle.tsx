@@ -1,7 +1,4 @@
-import { motion } from "framer-motion";
 import { useRef } from "react";
-import { BsArrowReturnRight } from "react-icons/bs";
-import { cn } from "../../utils";
 
 const SectionTitle = ({
   title,

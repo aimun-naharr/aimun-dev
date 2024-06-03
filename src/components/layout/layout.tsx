@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect } from "react";
 import Footer from "../../pages/home/Footer";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";

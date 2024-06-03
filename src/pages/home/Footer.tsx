@@ -1,4 +1,3 @@
-import React from "react";
 import Container from "../../components/layout/Container";
 import RevealText from "../../components/RevealText";
 import SocialLinks from "./SocialLinks";
