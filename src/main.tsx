@@ -3,9 +3,8 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { ReactLenis } from "@studio-freight/react-lenis";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./pages/home/index.tsx";
-import Layout from "./components/layout/layout.tsx";
+import { RouterProvider } from "react-router-dom";
+
 import { router } from "./router/index.tsx";
 
 const lenisOptions = {

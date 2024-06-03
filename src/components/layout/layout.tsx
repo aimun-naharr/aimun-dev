@@ -39,7 +39,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     };
   }, []);
   return (
-    <div key={name}>
+    <div>
       <div id="mouse" className="hidden md:block"></div>
       <Navbar />
       <div className="relative z-[10] ">{children}</div>

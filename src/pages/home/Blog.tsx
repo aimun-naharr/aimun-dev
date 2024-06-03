@@ -43,7 +43,7 @@ export default function Blog() {
         <div className="flex md:gap-8 gap-0  py-10 flex-wrap">
           {Array(3)
             .fill("")
-            .map((itm, i) => {
+            .map((i) => {
               if (i % 2 !== 0) {
                 return <BlogCard key={i} className="md:mt-32 mt-0" />;
               } else {

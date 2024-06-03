@@ -2,7 +2,6 @@ import { useRef } from "react";
 
 const SectionTitle = ({
   title,
-  progressBgClass,
 }: {
   title: string;
   progressBgClass?: string;

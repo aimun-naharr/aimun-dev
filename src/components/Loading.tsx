@@ -1,7 +1,7 @@
 import RevealText from "./RevealText";
 import { motion } from "framer-motion";
 
-export default function Loading({ setLoading }) {
+export default function Loading() {
   const revealFromClipping = {
     hidden: {
       clipPath: "circle(111.3% at 50% 0)",
