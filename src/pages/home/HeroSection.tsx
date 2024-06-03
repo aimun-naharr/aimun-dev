@@ -20,7 +20,7 @@ const HeroSection = () => {
     <>
       <section
         data-color="light"
-        className=" relative  h-screen  flex flex-col  items-center bg-dot-pattern-light z-10"
+        className=" relative  min-h-[100dvh]  flex flex-col  items-center bg-dot-pattern-light"
       >
         {/* <AboutExp /> */}
         <Container>
@@ -33,14 +33,15 @@ const HeroSection = () => {
                 <RevealText word="Nahar" animDelay={5} />
               </h1>
             </div>
-            <div className="flex flex-col sm:flex-row   gap-20 mt-10 mb-20 leading-relaxed justify-between  px-10">
+            <div className="flex flex-col sm:flex-row gap-4  md:gap-20 mt-10 mb-20 leading-relaxed justify-between  px-10">
               <div className="pl-10">
-                <p>☁️18 deg weather</p>
-                <p>chittagong bangladesh</p>
+                <button className="size-[120px] rounded-full bg-orange-500 text-xl font-bold ">
+                  resume
+                </button>
               </div>
 
               <motion.div
-                className="w-full sm:w-1/2 text-2xl"
+                className="w-full sm:w-1/2 sm:text-2xl text-xl"
                 variants={revealAnim}
                 initial={"hidden"}
                 animate={"show"}

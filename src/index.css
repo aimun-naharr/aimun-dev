@@ -84,6 +84,7 @@ body {
   justify-content: center;
   /* background-color: cyan; */
   filter: blur(180px);
+  pointer-events: none;
 }
 
 [theme="light"] #mouse {

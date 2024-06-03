@@ -2,10 +2,17 @@ import React from "react";
 import Container from "../../components/layout/Container";
 import SectionTitle from "../../components/shared/SectionTitle";
 import { cn } from "../../utils";
+import { useNavigate } from "react-router-dom";
 
 const BlogCard = ({ className }: { className?: string }) => {
+  const navigate = useNavigate();
   return (
-    <div className={cn("md:w-[31%] w-full sticky top-0", className)}>
+    <div
+      className={cn("md:w-[31%] w-full sticky top-0 cursor-pointer", className)}
+      onClick={() => {
+        navigate("/blog/1");
+      }}
+    >
       <div className="w-full rounded-md overflow-hidden ">
         <img
           src="https://images.unsplash.com/photo-1714138665411-31c308b8e229?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwyMXx8fGVufDB8fHx8fA%3D%3D"
@@ -27,7 +34,11 @@ const BlogCard = ({ className }: { className?: string }) => {
 
 export default function Blog() {
   return (
-    <section className="py-32 bg-dot-pattern-light z-10" data-color="light">
+    <section
+      id="blog"
+      className="py-32 bg-dot-pattern-light z-10"
+      data-color="light"
+    >
       <Container>
         <SectionTitle title="Blog" />
         <div className="flex md:gap-8 gap-0  py-10 flex-wrap">

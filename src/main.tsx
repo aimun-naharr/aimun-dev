@@ -1,8 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
 import "./index.css";
 import { ReactLenis } from "@studio-freight/react-lenis";
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import HomePage from "./pages/home/index.tsx";
+import Layout from "./components/layout/layout.tsx";
+import { router } from "./router/index.tsx";
+
 const lenisOptions = {
   lerp: 0.1,
   duration: 1.5,
@@ -13,7 +18,8 @@ const lenisOptions = {
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ReactLenis root options={lenisOptions}>
-      <App />
+      <RouterProvider router={router} />
+      {/* <App /> */}
     </ReactLenis>
   </React.StrictMode>
 );

@@ -1,0 +1,38 @@
+import eCommerce from "../src/assets/gh-store.png";
+import donationApp from "../src/assets/DoDonate.png";
+import propertyLanding from "../src/assets/property-landing.png";
+import significo from "../src/assets/significo.png";
+
+export const works = [
+  {
+    title: "E-commerce shop",
+    image: eCommerce,
+    techStacks: ["Nextjs", "Redux"],
+    description:
+      "An e-commerce shop with secure login , product listing, cart and dashboard feature",
+    live: "https://gh-eshop.netlify.app/",
+  },
+
+  {
+    title: "Food Donation app",
+    image: donationApp,
+    techStacks: ["React", "Typescript", "Redux", "RTK query"],
+    description:
+      "A donation app for needy ones. Showcasing donation goods. features for donating and a dashboard for managing donation goods",
+    live: "https://food-donation-app-one.vercel.app/",
+  },
+  {
+    title: "Property landing page",
+    image: propertyLanding,
+    techStacks: ["React", "framer motion"],
+    description: "It is just an UI Design",
+    live: "https://archivista-portfolio.netlify.app/",
+  },
+  {
+    title: "Significo",
+    image: significo,
+    techStacks: ["React", "gsap"],
+    description: "Another UI design which I created for learning gsap",
+    live: "https://significo-clone-sh.netlify.app/",
+  },
+];
