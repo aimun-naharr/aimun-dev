@@ -1,7 +1,7 @@
-import eCommerce from "../src/assets/gh-store.png";
-import donationApp from "../src/assets/DoDonate.png";
-import propertyLanding from "../src/assets/property-landing.png";
-import significo from "../src/assets/significo.png";
+import significo from "../src/assets//tinified/significo.png";
+import donationApp from "../src/assets/tinified/DoDonate.png";
+import eCommerce from "../src/assets/tinified/gh-store.png";
+import propertyLanding from "../src/assets/tinified/property-landing.png";
 
 export const works = [
   {
