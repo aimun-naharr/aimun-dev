@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { revealAnim } from "../../animations";
+import { InfiniteMovingCards } from "../../components/InfiniteMovingCards";
 import RevealText from "../../components/RevealText";
 import Container from "../../components/layout/Container";
-import { InfiniteMovingCards } from "../../components/InfiniteMovingCards";
 import SocialLinks from "./SocialLinks";
 
 const HeroSection = () => {
@@ -40,16 +40,18 @@ const HeroSection = () => {
               </div>
 
               <motion.div
-                className="w-full sm:w-1/2 sm:text-2xl text-xl"
+                className="w-full sm:w-1/2 sm:text-xl text-md"
                 variants={revealAnim}
                 initial={"hidden"}
                 animate={"show"}
                 custom={1.2}
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
-                incidunt quasi consequatur odio nihil quidem, officia nobis
-                omnis quaerat excepturi repudiandae cumque necessitatibus sequi
-                maxime ad voluptates eligendi fuga fugiat?
+                A talented frontend developer from Bangladesh with a deep
+                passion for UI/UX. With one year of industry experience, I
+                thoroughly enjoy my work—most days, it doesn’t even feel like
+                work! I’m always eager to learn new things to solve UI
+                challenges because, let’s face it, bugs are just features that
+                haven’t had their morning coffee yet.
               </motion.div>
             </div>
             <div className="">
