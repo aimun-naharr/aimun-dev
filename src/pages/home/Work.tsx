@@ -8,6 +8,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
+import gsap from "gsap";
 
 type TWorkCard = {
   index: number;
@@ -30,18 +31,18 @@ const WorkCard = ({ index, setActiveIndex }: TWorkCard) => {
   useEffect(() => {
     setActiveIndex(index);
   }, [isInView]);
+
   return (
     <motion.div
-      // lerp={0.5}
       style={{ scale: scale }}
       ref={ref}
-      className=" w-full rounded-md bg-card-bg p-6 flex flex-col gap-3"
+      className="relative z-[8] w-full rounded-md bg-card-bg p-6 flex flex-col gap-3 cursor-pointer"
     >
-      <div className="w-full rounded-md overflow-hidden">
+      <div className="w-full rounded-md overflow-hidden z-[7] relative">
         <img
           src="https://images.unsplash.com/photo-1716255254612-c0366e3bc5d5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHx8fA%3D%3D"
           alt=""
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover "
         />
       </div>
       <div className="flex flex-col gap-3">
@@ -67,15 +68,15 @@ const Work = () => {
     <section className="py-10" data-color="dark">
       <Container>
         <SectionTitle title="Work" progressBgClass="bg-primary"></SectionTitle>
-        <div className="flex  relative">
-          <div className="w-1/2  h-max sticky top-1/4">
+        <div className="flex md:flex-row flex-col relative">
+          <div className="md:w-1/2  h-max sticky md:top-1/4 top-0 w-full py-3 md:py-0  mb-10 md:mb-0 bg-primary-foreground md:bg-transparent z-10">
             <h1 className="text-[15vw] leading-[15vw] text ">
               <span className="inline-block">0</span>
               <span className="inline-block">{activeIndex}</span>
               <span className="inline-block">.</span>
             </h1>
           </div>
-          <div className="flex flex-col gap-8 w-full">
+          <div className="flex flex-col gap-8 w-full relative z-[9]">
             {Array(4)
               .fill("")
               .map((itm, i) => {

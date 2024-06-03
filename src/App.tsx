@@ -4,6 +4,7 @@ import HomePage from "./pages/home";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
 import Loading from "./components/Loading";
+import Footer from "./pages/home/Footer";
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
@@ -28,20 +29,25 @@ function App() {
       });
     });
   }, []);
+
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-    return () => {
-      clearTimeout(timer);
+    document.body.onmousemove = (e) => {
+      gsap.to("#mouse", {
+        top: e.clientY,
+        left: e.clientX,
+        ease: "expo.out",
+        duration: 2,
+      });
     };
   }, []);
 
   return (
     <>
-      <div>
+      <div id="mouse"></div>
+      <div className="relative   z-[10] ">
         <HomePage />
       </div>
+      <Footer />
     </>
   );
 }

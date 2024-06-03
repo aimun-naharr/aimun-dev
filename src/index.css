@@ -53,6 +53,11 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+/* .text {
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} */
 
 .light-gradient {
   background: var(--text-gradient);
@@ -66,6 +71,30 @@ body {
     repeat;
   background-size: 20px 20px;
 }
+
+#mouse {
+  height: 200px;
+  width: 200px;
+  position: fixed;
+  border-radius: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: cyan; */
+  filter: blur(180px);
+}
+
+[theme="light"] #mouse {
+  background-color: orange;
+  color: var(--primary-color);
+}
+[theme="dark"] #mouse {
+  background-color: cyan;
+  color: var(--primary-foreground-color);
+}
+
 .bg-dot-pattern-dark {
   background: radial-gradient(circle, rgb(161, 151, 151) 20%, transparent 20%)
     repeat;

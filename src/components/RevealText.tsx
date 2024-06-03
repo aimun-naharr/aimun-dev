@@ -6,10 +6,12 @@ export default function RevealText({
   word,
   className,
   animDelay = 0,
+  whileInView = false,
 }: {
   word: string;
   className?: string;
   animDelay?: number;
+  whileInView?: boolean;
 }) {
   const letters = word.split("");
 
@@ -26,21 +28,40 @@ export default function RevealText({
       },
     }),
   };
-  // motion
-  return (
-    <>
-      {letters.map((letter, index) => (
-        <motion.span
-          variants={revealAnim}
-          initial={"hidden"}
-          animate={"show"}
-          custom={(index + animDelay) / 8}
-          key={index}
-          className={cn("inline-block ", className)}
-        >
-          {letter}
-        </motion.span>
-      ))}
-    </>
-  );
+
+  if (whileInView) {
+    return (
+      <>
+        {letters.map((letter, index) => (
+          <motion.span
+            variants={revealAnim}
+            initial={"hidden"}
+            whileInView={"show"}
+            custom={(index + animDelay) / 8}
+            key={index}
+            className={cn("inline-block ", className)}
+          >
+            {letter}
+          </motion.span>
+        ))}
+      </>
+    );
+  } else {
+    return (
+      <>
+        {letters.map((letter, index) => (
+          <motion.span
+            variants={revealAnim}
+            initial={"hidden"}
+            animate={"show"}
+            custom={(index + animDelay) / 8}
+            key={index}
+            className={cn("inline-block ", className)}
+          >
+            {letter}
+          </motion.span>
+        ))}
+      </>
+    );
+  }
 }

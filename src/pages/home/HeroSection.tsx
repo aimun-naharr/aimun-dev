@@ -3,51 +3,44 @@ import { MdArrowOutward } from "react-icons/md";
 import { revealAnim } from "../../animations";
 import RevealText from "../../components/RevealText";
 import Container from "../../components/layout/Container";
-
-const SocialLink = ({ title }: { title: string }) => {
-  return (
-    <div className="text-3xl relative flex gap-1 items-center  group overflow-hidden">
-      {title}{" "}
-      <span>
-        <MdArrowOutward
-          className="group-hover:-translate-y-[100%]
-        group-hover:translate-x-[70%] transition-transform duration-700"
-        />
-      </span>
-      <div className="absolute h-full w-full top-[100%] border flex justify-end ">
-        <MdArrowOutward className="absolute right-7 group-hover:-translate-y-[112%] transition-transform duration-700 group-hover:translate-x-[90%]" />
-      </div>
-    </div>
-  );
-};
+import { InfiniteMovingCards } from "../../components/InfiniteMovingCards";
+import SocialLinks from "./SocialLinks";
 
 const HeroSection = () => {
-  // motion
+  const techStacks = [
+    "Javascript",
+    "Typescript",
+    "React",
+    "Redux",
+    "figma",
+    "gsap",
+    "framer motion",
+  ];
   return (
     <>
       <section
         data-color="light"
-        className=" relative  h-screen  flex  justify-center bg-dot-pattern-light"
+        className=" relative  h-screen  flex flex-col  items-center bg-dot-pattern-light z-10"
       >
         {/* <AboutExp /> */}
         <Container>
           <div className="w-full ">
-            <div className="">
-              <h1 className="text-[10vw] leading-[10vw] font-sans-bold tracking-tight uppercase overflow-hidden text-center ">
+            <div className="w-full">
+              <h1 className="3xl:text-[9vw] 3xl:leading-[9vw] 2xl:text-[10vw] 2xl:leading-[10vw] xl:text-[11vw] xl:leading-[11vw] lg:text-[12vw] lg:leading-[12vw] font-sans-bold tracking-tight uppercase overflow-hidden text-center md:text-[12vw] md:leading-[12vw] sm:text-[13vw] sm:leading-[13vw] text-[12vw] leading-[12vw] ">
                 {/* Frontend{" "} */}
                 <RevealText word="Aimun " />
                 <span> </span>
                 <RevealText word="Nahar" animDelay={5} />
               </h1>
             </div>
-            <div className="flex   gap-20 mt-10 mb-20 leading-relaxed justify-between  px-10">
+            <div className="flex flex-col sm:flex-row   gap-20 mt-10 mb-20 leading-relaxed justify-between  px-10">
               <div className="pl-10">
                 <p>☁️18 deg weather</p>
                 <p>chittagong bangladesh</p>
               </div>
 
               <motion.div
-                className="w-1/2 text-2xl"
+                className="w-full sm:w-1/2 text-2xl"
                 variants={revealAnim}
                 initial={"hidden"}
                 animate={"show"}
@@ -60,21 +53,25 @@ const HeroSection = () => {
               </motion.div>
             </div>
             <div className="">
-              <motion.div
-                variants={revealAnim}
-                initial={"hidden"}
-                animate={"show"}
-                custom={1.9}
-                className="flex gap-6  justify-end"
-              >
-                <SocialLink title="facebook" />
-                <SocialLink title="twitter" />
-                <SocialLink title="linkedin" />
-                <SocialLink title="instagram" />
-              </motion.div>
+              <SocialLinks />
             </div>
           </div>
         </Container>
+        <div className=" w-full flex items-center justify-center mt-20">
+          <InfiniteMovingCards>
+            {techStacks.map((itm) => {
+              return (
+                <li
+                  className="text-2xl flex gap-2 items-center  px-4 py-1 rounded-full"
+                  key={itm}
+                >
+                  <div className="size-6 rounded-full bg-primary-foreground"></div>
+                  <span>{itm}</span>
+                </li>
+              );
+            })}
+          </InfiniteMovingCards>
+        </div>
       </section>
     </>
   );
