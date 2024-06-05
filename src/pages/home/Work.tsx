@@ -57,7 +57,7 @@ const WorkCard = ({ index, setActiveIndex, item }: TWorkCard) => {
         <h2 className="text-2xl font-semibold tracking-wide">{item.title}</h2>
         <p className="text text-sm">{item.description}</p>
 
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-wrap">
           {/* <span className="chip text">React</span>
           <span className="chip text">typescript</span>
           <span className="chip text">redux</span> */}
