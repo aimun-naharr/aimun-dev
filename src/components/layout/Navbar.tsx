@@ -1,4 +1,3 @@
-import React from "react";
 import { cn } from "../../utils";
 import Container from "./Container";
 import { Link } from "react-router-dom";
