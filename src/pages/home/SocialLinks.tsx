@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { revealAnim } from "../../animations";
 import { MdArrowOutward } from "react-icons/md";
+import { revealAnim } from "../../animations";
 
 const SocialLink = ({
   title,
@@ -17,6 +17,7 @@ const SocialLink = ({
         variants={revealAnim}
         initial={"hidden"}
         whileInView={"show"}
+        viewport={{ once: true }}
         custom={animDelay}
         className="sm:text-3xl text-2xl relative flex gap-1 items-center  group overflow-hidden"
       >
@@ -53,7 +54,7 @@ export default function SocialLinks() {
           <SocialLink
             title={link.title}
             link={link.link}
-            animDelay={0.8 + (i + 1)}
+            animDelay={1.2 + i * 0.1}
           />
         );
       })}

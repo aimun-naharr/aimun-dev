@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
+import gsap from "gsap";
+import { useRef } from "react";
 import { revealAnim } from "../../animations";
-import { InfiniteMovingCards } from "../../components/InfiniteMovingCards";
 import RevealText from "../../components/RevealText";
 import Container from "../../components/layout/Container";
 import SocialLinks from "./SocialLinks";
-import gsap from "gsap";
-import { useRef } from "react";
 
 const HeroSection = () => {
   const resumerContainer = useRef<HTMLDivElement>(null);
@@ -17,6 +16,15 @@ const HeroSection = () => {
     "figma",
     "gsap",
     "framer motion",
+  ];
+  const descriptions = [
+    "A great frontend developer from Bangladesh with a",
+    "deep passion for UI/UX. With one year of industry",
+    "experience, I thoroughly enjoy my work. Most days, it",
+    "doesn’t even feel like work! Though I’m always up for",
+    "new tech trends to solve UI challenges because, let’s",
+    "face it, bugs are just features that haven’t had",
+    "their morning coffee yet.",
   ];
 
   const handleResumeMouseMove = (e: React.MouseEvent) => {
@@ -61,14 +69,14 @@ const HeroSection = () => {
         <Container>
           <div className="w-full ">
             <div className="w-full">
-              <h1 className="3xl:text-[9vw] 3xl:leading-[9vw] 2xl:text-[10vw] 2xl:leading-[10vw] xl:text-[11vw] xl:leading-[11vw] lg:text-[12vw] lg:leading-[12vw] font-sans-bold tracking-tight uppercase overflow-hidden text-center md:text-[12vw] md:leading-[12vw] sm:text-[13vw] sm:leading-[13vw] text-[12vw] leading-[12vw] ">
+              <h1 className="3xl:text-[9vw] 3xl:leading-[9vw] 2xl:text-[10vw] 2xl:leading-[10vw] xl:text-[11vw] xl:leading-[11vw] lg:text-[12vw] lg:leading-[12vw] font-sans-bold tracking-tight uppercase overflow-hidden text-center md:text-[12vw] md:leading-[12vw] sm:text-[13vw] sm:leading-[13vw] text-[12vw] leading-[12vw]  ">
                 {/* Frontend{" "} */}
                 <RevealText word="Aimun " />
                 <span> </span>
                 <RevealText word="Nahar" animDelay={5} />
               </h1>
             </div>
-            <div className="flex flex-col md:flex-row gap-4  md:gap-20 mt-10 mb-20 leading-relaxed justify-between  px-10">
+            <div className="flex flex-col md:flex-row gap-4  md:gap-20 mt-10 mb-10 leading-relaxed justify-between  pl-10">
               <div className="pl-10 flex justify-end md:justify-start">
                 <div
                   ref={resumerContainer}
@@ -91,70 +99,27 @@ const HeroSection = () => {
               </div>
 
               <motion.div
-                variants={revealAnim}
-                initial={"hidden"}
-                animate={"show"}
-                custom={0.1}
-                className="w-full md:w-1/2 sm:text-xl text-md md:text-right text-left"
+                // variants={revealAnim}
+                // initial={"hidden"}
+                // animate={"show"}
+                // custom={0.1}
+                className="w-full md:w-1/2 sm:text-xl text-md md:text-right lg:text-base text-left"
               >
-                <motion.span
-                  variants={revealAnim}
-                  initial={"hidden"}
-                  animate={"show"}
-                  custom={0.8}
-                  className="inline-block overflow-hidden "
-                >
-                  A great frontend developer from Bangladesh with a deep passion
-                </motion.span>
-                <motion.span
-                  variants={revealAnim}
-                  initial={"hidden"}
-                  animate={"show"}
-                  custom={1.2}
-                  className="inline-block overflow-hidden"
-                >
-                  for UI/UX. With one year of industry experience, I thoroughly
-                </motion.span>
-                <motion.span
-                  variants={revealAnim}
-                  initial={"hidden"}
-                  animate={"show"}
-                  custom={1.6}
-                  className="inline-block overflow-hidden"
-                >
-                  enjoy my work. Most days, it doesn’t even feel like work!
-                  Though
-                </motion.span>
-                <motion.span
-                  variants={revealAnim}
-                  initial={"hidden"}
-                  animate={"show"}
-                  custom={2}
-                  className="inline-block overflow-hidden"
-                >
-                  {" "}
-                  I’m always up for new tech trends to solve UI challenges
-                  because,
-                </motion.span>
-                <motion.span
-                  variants={revealAnim}
-                  initial={"hidden"}
-                  animate={"show"}
-                  custom={2.4}
-                  className="inline-block overflow-hidden"
-                >
-                  {" "}
-                  let’s face it, bugs are just features that haven’t had
-                </motion.span>
-                <motion.span
-                  variants={revealAnim}
-                  initial={"hidden"}
-                  animate={"show"}
-                  custom={2.8}
-                  className="inline-block"
-                >
-                  their morning coffee yet.
-                </motion.span>
+                {descriptions.map((d, i) => {
+                  return (
+                    <div key={i} className="overflow-hidden">
+                      <motion.span
+                        variants={revealAnim}
+                        initial={"hidden"}
+                        animate={"show"}
+                        custom={0.8 + i * 0.1}
+                        className="inline-block overflow-hidden "
+                      >
+                        {d}
+                      </motion.span>
+                    </div>
+                  );
+                })}
               </motion.div>
             </div>
             <div className="">
@@ -163,19 +128,32 @@ const HeroSection = () => {
           </div>
         </Container>
         <div className=" w-full flex items-center justify-center mt-20">
-          <InfiniteMovingCards>
-            {techStacks.map((itm) => {
-              return (
-                <li
-                  className="text-2xl flex gap-2 items-center  px-4 py-1 rounded-full"
-                  key={itm}
-                >
-                  <div className="size-6 rounded-full bg-primary-foreground"></div>
-                  <span>{itm}</span>
-                </li>
-              );
-            })}
-          </InfiniteMovingCards>
+          <div className="marquee-text">
+            <div className="marquee-text-track">
+              {techStacks.map((itm) => {
+                return (
+                  <li
+                    className="text-2xl flex gap-2 items-center  rounded-full"
+                    key={itm}
+                  >
+                    <div className="size-6 rounded-full bg-primary-foreground"></div>
+                    <span>{itm}</span>
+                  </li>
+                );
+              })}
+              {techStacks.map((itm) => {
+                return (
+                  <li
+                    className="text-2xl flex gap-2 items-center  rounded-full"
+                    key={itm}
+                  >
+                    <div className="size-6 rounded-full bg-primary-foreground"></div>
+                    <span>{itm}</span>
+                  </li>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </section>
     </>

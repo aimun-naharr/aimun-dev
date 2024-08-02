@@ -4,11 +4,11 @@ export const revealAnim = {
     opacity: 1,
     y: 0,
     transition: {
-      ease: [0.68, -0.6, 0.32, 1.6],
+      // ease: [0.68, -0.6, 0.32, 1.6],
       delay: delay,
       // type: "spring",
-      duration: 1,
-      staggerChildren: 0.5,
+      duration: 0.6,
+      // staggerChildren: 0.5,
     },
   }),
 };
